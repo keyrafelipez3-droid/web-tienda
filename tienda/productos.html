@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tienda - MODULO</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">MODULO</a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="productos.html" class="active">Tienda</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+  <a href="productos.html" class="nav-cart">Carrito (<span id="cart-count">0</span>)</a>
+</nav>
+
+<div class="page-header">
+  <h1>Coleccion completa</h1>
+  <p>Todos nuestros productos</p>
+</div>
+
+<section class="shop-section">
+  <div class="shop-filters">
+    <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+    <button class="filter-btn" onclick="filterProducts('hogar')">Hogar</button>
+    <button class="filter-btn" onclick="filterProducts('moda')">Moda</button>
+    <button class="filter-btn" onclick="filterProducts('accesorios')">Accesorios</button>
+  </div>
+  <div class="products-grid" id="shop-grid"></div>
+</section>
+
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Tu carrito</h3>
+    <button onclick="toggleCart()">x</button>
+  </div>
+  <div id="cart-items-list"></div>
+  <div class="cart-footer">
+    <p class="cart-total">Total: $<span id="cart-total">0</span></p>
+    <button class="btn-primary" onclick="checkout()">Pagar</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <span class="footer-logo">MODULO</span>
+  <p>2025 Todos los derechos reservados</p>
+  <div class="footer-links">
+    <a href="productos.html">Tienda</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</footer>
+
+<script src="js/productos-data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

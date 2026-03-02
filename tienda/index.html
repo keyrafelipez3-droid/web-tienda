@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MODULO Tienda</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">MODULO</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Inicio</a>
+    <a href="productos.html">Tienda</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+  <a href="productos.html" class="nav-cart">Carrito (<span id="cart-count">0</span>)</a>
+</nav>
+<header class="hero">
+  <div class="hero-tag">Coleccion 2025</div>
+  <h1 class="hero-title">Diseno.<br>Sin<br>compromiso.</h1>
+  <p class="hero-sub">Piezas de autor para espacios y personas que se niegan a lo ordinario.</p>
+  <a href="productos.html" class="btn-primary">Ver coleccion</a>
+  <div class="hero-strip"><span>MODULO &nbsp; DISENO &nbsp; CALIDAD &nbsp; ESTILO &nbsp; MODULO &nbsp; DISENO &nbsp; CALIDAD &nbsp;</span></div>
+</header>
+<section class="features">
+  <div class="feature-card">
+    <span class="feat-icon">&#9653;</span>
+    <h3>Materiales premium</h3>
+    <p>Seleccionados con criterio estricto de calidad y durabilidad.</p>
+  </div>
+  <div class="feature-card">
+    <span class="feat-icon">&#9670;</span>
+    <h3>Envio en 48h</h3>
+    <p>Recibe tu pedido rapido, sin excusas ni esperas interminables.</p>
+  </div>
+  <div class="feature-card">
+    <span class="feat-icon">&#9711;</span>
+    <h3>Devolucion libre</h3>
+    <p>30 dias para cambiar de opinion. Sin preguntas.</p>
+  </div>
+</section>
+<section class="highlights">
+  <h2>Lo mas visto</h2>
+  <div class="products-grid" id="highlights-grid"></div>
+  <a href="productos.html" class="btn-secondary">Ver todo</a>
+</section>
+<footer class="footer">
+  <span class="footer-logo">MODULO</span>
+  <p>2025 Todos los derechos reservados</p>
+  <div class="footer-links">
+    <a href="productos.html">Tienda</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</footer>
+<script src="js/productos-data.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  var grid = document.getElementById("highlights-grid");
+  PRODUCTOS.slice(0,3).forEach(function(p){
+    var card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = "<div class="product-img" style="background:"+p.color+"">"+p.emoji+"</div><div class="product-info"><h3>"+p.nombre+"</h3><p class="product-price">$"+p.precio.toLocaleString()+"</p><button class="btn-add" onclick="addToCart("+p.id+")">Agregar al carrito</button></div>";
+    grid.appendChild(card);
+  });
+</script>
+</body>
+</html>
