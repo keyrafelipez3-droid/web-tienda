@@ -59,8 +59,7 @@
 <script>
   var grid = document.getElementById("highlights-grid");
   PRODUCTOS.slice(0,3).forEach(function(p){
-    var card = document.createElement("div");
-    card.className = "product-card";
+    vat-card";
     card.innerHTML = "<div class="product-img" style="background:"+p.color+"">"+p.emoji+"</div><div class="product-info"><h3>"+p.nombre+"</h3><p class="product-price">$"+p.precio.toLocaleString()+"</p><button class="btn-add" onclick="addToCart("+p.id+")">Agregar al carrito</button></div>";
     grid.appendChild(card);
   });
